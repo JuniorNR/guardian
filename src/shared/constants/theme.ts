@@ -5,6 +5,22 @@ const mainTheme = {
   warning: 'rgba(255, 159, 10, 1)',
   danger: 'rgba(255, 69, 58, 1)',
   info: 'rgba(10, 132, 255, 1)',
+  buttonSize: {
+    sm: 50,
+    md: 75,
+    lg: 100
+  },
+  textSize: {
+    sm: 12,
+    md: 14,
+    lg: 16,
+  },
+  radius: {
+    sm: 10,
+    md: 15,
+    lg: 25,
+    circle: 50
+  }
 }
 
 export const darkTheme: Theme = {

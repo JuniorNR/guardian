@@ -1,7 +1,10 @@
 
+import { ThemeDarkIcon } from "@/assets/icons/ThemeDarkIcon";
+import { ThemeLightIcon } from "@/assets/icons/ThemeLightIcon";
 import { useTheme } from "@/shared/hooks";
+import { Button } from "@/shared/ui";
 import { FC } from "react";
-import { Pressable, Text, View } from "react-native";
+import { View } from "react-native";
 import { createStyle } from "./themeSwitcher.styles";
 
 export const ThemeSwitcher: FC = () => {
@@ -18,12 +21,13 @@ export const ThemeSwitcher: FC = () => {
 
   return (
     <View>
-      <Pressable
-        style={style.switchButton}
-        onPress={handleChangeTheme}
-      >
-        <Text style={style.switchButtonText}>{theme.name}867786</Text>
-      </Pressable>
+      <Button onPress={handleChangeTheme} title='test' radius="sm">
+        {theme.name === 'light' ? (
+          <ThemeLightIcon width={style.svgIcon.width} height={style.svgIcon.height} color={theme.primaryText} />
+        ) : (
+          <ThemeDarkIcon width={style.svgIcon.width} height={style.svgIcon.height} color={theme.primaryText} />
+        )}
+      </Button>
     </View>
   )
 }

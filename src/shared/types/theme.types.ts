@@ -8,4 +8,20 @@ export interface Theme {
   warning: string
   danger: string
   info: string
+  buttonSize: {
+    sm: number
+    md: number
+    lg: number
+  }
+  textSize: {
+    sm: number
+    md: number
+    lg: number
+  }
+  radius: {
+    sm: number
+    md: number
+    lg: number
+    circle: number
+  }
 }
