@@ -1,34 +1,36 @@
-import { darkTheme, lightTheme } from "@/shared/constants"
-import { Theme } from "@/shared/types"
-import { createContext, FC, useState } from "react"
-import { ThemeContextType } from "../model/themeProvider.types"
-
-
+import { darkTheme, lightTheme } from "@/shared/constants";
+import type { Theme } from "@/shared/types";
+import { createContext, type FC, useState } from "react";
+import type { ThemeContextType } from "../model/themeProvider.types";
 
 export const ThemeContext = createContext<ThemeContextType>({
-  theme: darkTheme,
-  changeTheme: () => {}
-})
+	theme: darkTheme,
+	changeTheme: () => {},
+});
 
-export const ThemeProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(darkTheme)
+export const ThemeProvider: FC<{ children: React.ReactNode }> = ({
+	children,
+}) => {
+	const [theme, setTheme] = useState<Theme>(darkTheme);
 
-  const changeTheme: ThemeContextType['changeTheme'] = (name) => {
-    switch (name) {
-      case 'light': {
-        setTheme(lightTheme)
-        break
-      }
-      case 'dark': {
-        setTheme(darkTheme)
-      }
-      default: setTheme(darkTheme)
-    }
-  }
+	const changeTheme: ThemeContextType["changeTheme"] = (name) => {
+		switch (name) {
+			case "light": {
+				setTheme(lightTheme);
+				break;
+			}
+			case "dark": {
+				setTheme(darkTheme);
+				break;
+			}
+			default:
+				setTheme(darkTheme);
+		}
+	};
 
-  return (
-    <ThemeContext.Provider value={{ theme, changeTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
-}
+	return (
+		<ThemeContext.Provider value={{ theme, changeTheme }}>
+			{children}
+		</ThemeContext.Provider>
+	);
+};

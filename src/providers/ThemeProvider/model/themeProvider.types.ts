@@ -1,6 +1,6 @@
-import { Theme } from "@/shared/constants"
+import type { Theme } from "@/shared/types";
 
 export interface ThemeContextType {
-  theme: Theme
-  changeTheme: (name: Theme['name']) => void
+	theme: Theme;
+	changeTheme: (name: Theme["name"]) => void;
 }
