@@ -2,6 +2,7 @@ import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StyledView } from "@/shared/ui";
 
+
 export default function mainScreen() {
 	return (
 		<StyledView>

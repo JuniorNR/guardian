@@ -3,10 +3,10 @@ import { StyleSheet, Text, type TextProps } from "react-native";
 import { useTheme } from "@/shared/hooks";
 import type { Theme } from "@/shared/types";
 
-export const StyledText: FC<TextProps> = ({ children }) => {
+export const StyledText: FC<TextProps> = ({ children, style }) => {
 	const { theme } = useTheme();
-	const style = styleCreate(theme);
-	return <Text style={style.styledText}>{children}</Text>;
+	const additionalStyle = styleCreate(theme);
+	return <Text style={{...style, ...additionalStyle.styledText}}>{children}</Text>;
 };
 
 const styleCreate = (theme: Theme) =>

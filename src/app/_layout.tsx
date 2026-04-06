@@ -3,6 +3,7 @@ import { useTheme } from "@/shared/hooks";
 import type { Theme } from "@/shared/types";
 import { Stack } from "expo-router";
 import { StyleSheet } from "react-native";
+import '@/configs/i18n/i18n.config';
 
 export default function RootLayout() {
 	return (

@@ -1,6 +1,6 @@
-import { ThemeSwitcher } from "@/features";
-import { StyledText, StyledView } from "@/shared/ui";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { LanguageSwitcher, ThemeSwitcher } from "@/features";
+import { StyledText, StyledView } from "@/shared/ui";
 
 export default function settingsScreen() {
 	return (
@@ -8,6 +8,7 @@ export default function settingsScreen() {
 			<SafeAreaView>
 				<StyledText>Edit src/app/index.tsx to edit this scree1.</StyledText>
 				<ThemeSwitcher />
+				<LanguageSwitcher />
 			</SafeAreaView>
 		</StyledView>
 	);

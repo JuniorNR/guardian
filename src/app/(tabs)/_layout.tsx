@@ -5,10 +5,11 @@ export default function TabLayout() {
 	const { theme } = useTheme();
 	return (
 		<NativeTabs
-			labelStyle={{ color: theme.primaryText }}
-			backgroundColor={theme.primaryBackground}
-			tintColor={theme.primaryText}
+			labelStyle={{
+				color: theme.primaryText,
+			}}
 			iconColor={theme.primaryText}
+			backgroundColor={theme.primaryBackground}
 			badgeBackgroundColor={theme.primaryBackground}
 		>
 			<NativeTabs.Trigger name="index">
